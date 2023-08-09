@@ -46,3 +46,6 @@ before-commit:
 
 ipython:
 	${PYTHON} -c "import IPython;IPython.terminal.ipapp.launch_new_instance();"
+
+ruff:
+	${PYTHON} -m ruff check .
