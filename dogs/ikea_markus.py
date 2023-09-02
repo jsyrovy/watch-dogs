@@ -16,6 +16,6 @@ class MarkusDog(Dog):
         return value < 4000
 
     def _get_notification_text(self, value: int) -> str:
-        text = f"Markus je za {value}."
+        text = f"<a href='{self.URL}'>Markus</a> je za {value}."
         print(text)
         return text

@@ -12,7 +12,7 @@ def test_with_notification():
     with mock.patch.object(dog, "_get_value", return_value=value):
         assert dog._get_value() == value
         assert dog._should_send_notification(value) is True
-        assert dog._get_notification_text(value) == f"Markus je za {value}."
+        assert dog._get_notification_text(value) == f"<a href='{dog.URL}'>Markus</a> je za {value}."
 
 
 def test_without_notification():

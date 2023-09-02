@@ -10,6 +10,7 @@ def send_notification(text: str) -> None:
             "token": os.environ["PUSHOVER_TOKEN"],
             "user": os.environ["PUSHOVER_USER_KEY"],
             "message": text,
+            "html": 1,
         },
         timeout=5,
     )
