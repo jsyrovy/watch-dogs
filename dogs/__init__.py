@@ -1,3 +1,4 @@
-from dogs.ikea_markus import MarkusDog
+from dogs.ikea_laett import LaettDog
+from dogs.ikea_trofast import TrofastDog
 
-DOGS = (MarkusDog,)
+DOGS = (LaettDog, TrofastDog)
