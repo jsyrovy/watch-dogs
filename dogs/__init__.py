@@ -1,4 +1,4 @@
-from dogs.ikea_laett import LaettDog
-from dogs.ikea_trofast import TrofastDog
+from dogs.ikea.laett import LaettDog
+from dogs.ikea.trofast import TrofastDog
 
 DOGS = (LaettDog, TrofastDog)
