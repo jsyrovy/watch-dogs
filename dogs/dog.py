@@ -25,3 +25,20 @@ class Dog:
 
     def _get_notification_text(self, value: Any) -> str:
         raise NotImplementedError
+
+
+class PriceDog(Dog):
+    URL = ""
+    NAME = ""
+    PRICE = 0
+
+    def _get_value(self) -> Any:
+        raise NotImplementedError
+
+    def _should_send_notification(self, value: int) -> bool:
+        return value < self.PRICE
+
+    def _get_notification_text(self, value: int) -> str:
+        text = f"<a href='{self.URL}'>{self.NAME}</a> je za {value}."
+        print(text)
+        return text
