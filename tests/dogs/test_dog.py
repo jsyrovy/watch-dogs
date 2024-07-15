@@ -7,6 +7,8 @@ from dogs.dog import Dog, PriceDog
 
 
 class TestDog(Dog):
+    __test__ = False
+
     def __init__(self, send_notification):
         self._send_notification = send_notification
 
