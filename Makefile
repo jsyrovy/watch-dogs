@@ -21,14 +21,8 @@ mypy:
 	${PYTHON} -m mypy --ignore-missing-imports --strict  --exclude tests .
 	${PYTHON} -m mypy --ignore-missing-imports  tests
 
-flake8:
-	${PYTHON} -m flake8 --color=always .
-
-pylint:
-	${PYTHON} -m pylint -j 0 --output-format=colorized --recursive=y .
-
-black:
-	${PYTHON} -m black --line-length 120 .
+format:
+	${PYTHON} -m ruff format .
 
 test:
 	${PYTHON} -m pytest
@@ -38,14 +32,13 @@ coverage:
 	${PYTHON} -m coverage report -m
 
 before-commit:
-	make black
-	make test
+	make format
+	make lint
 	make mypy
-	make flake8
-	make pylint
+	make test
 
 ipython:
 	${PYTHON} -c "import IPython;IPython.terminal.ipapp.launch_new_instance();"
 
-ruff:
 	${PYTHON} -m ruff check .
+lint:
