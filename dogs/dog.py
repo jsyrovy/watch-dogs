@@ -1,5 +1,3 @@
-from typing import Any
-
 from utils.pushover import send_notification
 
 
@@ -17,13 +15,13 @@ class Dog:
 
             send_notification(notification_text)
 
-    def _get_value(self) -> Any:
+    def _get_value(self) -> int:
         raise NotImplementedError
 
-    def _should_send_notification(self, value: Any) -> bool:
+    def _should_send_notification(self, value: int) -> bool:
         raise NotImplementedError
 
-    def _get_notification_text(self, value: Any) -> str:
+    def _get_notification_text(self, value: int) -> str:
         raise NotImplementedError
 
 
@@ -32,7 +30,7 @@ class PriceDog(Dog):
     NAME = ""
     PRICE = 0
 
-    def _get_value(self) -> Any:
+    def _get_value(self) -> int:
         raise NotImplementedError
 
     def _should_send_notification(self, value: int) -> bool:

@@ -1,6 +1,7 @@
 # pylint: disable=protected-access
 
-import mock
+from unittest import mock
+
 import pytest
 
 from dogs.dog import Dog, PriceDog
@@ -9,16 +10,16 @@ from dogs.dog import Dog, PriceDog
 class TestDog(Dog):
     __test__ = False
 
-    def __init__(self, send_notification):
+    def __init__(self, send_notification) -> None:
         self._send_notification = send_notification
 
     def _get_value(self):
         return 0
 
-    def _should_send_notification(self, value):
+    def _should_send_notification(self, _):
         return self._send_notification
 
-    def _get_notification_text(self, value):
+    def _get_notification_text(self, _):
         return "test"
 
 

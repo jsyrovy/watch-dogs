@@ -1,6 +1,6 @@
 # pylint: disable=protected-access
 
-import mock
+from unittest import mock
 
 from dogs.mpo_matrace.dog import MpoMatraceDog
 
